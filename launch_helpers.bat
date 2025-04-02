@@ -486,5 +486,5 @@ exit /b
 
 :Update
 if not exist .\helpers\download.vbs call :CreateDownloadVBS
-cscript .\helpers\download.vbs https://raw.githubusercontent.com/MarioMasta64/EverythingPortable/master/launch_helpers.bat launch_helpers.bat >nul
+cscript .\helpers\download.vbs https://raw.githubusercontent.com/Marvideo2009/EverythingPortable/master/launch_helpers.bat launch_helpers.bat >nul
 exit /b

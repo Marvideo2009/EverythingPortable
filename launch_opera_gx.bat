@@ -76,7 +76,7 @@ if not exist ".\bin\opera_gx\launcher.exe" set "nag=PLEASE INSTALL OPERA GX FIRS
 title DO NOT CLOSE
 cls
 echo OPERA GX IS RUNNING
-.\bin\opera_gx\launcher.exe https://github.com/MarioMasta64/EverythingPortable/releases/latest/
+.\bin\opera_gx\launcher.exe https://github.com/Marvideo2009/EverythingPortable/releases/latest/
 taskkill /f /im opera_crashreporter.exe
 exit
 
@@ -123,7 +123,7 @@ exit /b 2
 if exist version.txt del version.txt >nul
 cls
 title Portable Opera GX Launcher - Helper Edition - Checking For Update
-call :HelperDownload "https://raw.githubusercontent.com/MarioMasta64/EverythingPortable/master/version.txt" "version.txt"
+call :HelperDownload "https://raw.githubusercontent.com/Marvideo2009/EverythingPortable/master/version.txt" "version.txt"
 set Counter=0 & for /f "DELIMS=" %%i in ('type version.txt') do (set /a Counter+=1 & set "Line_!Counter!=%%i")
 if exist version.txt del version.txt >nul
 set new_version=%Line_100%
@@ -155,7 +155,7 @@ exit /b 2
 :b
 :PortableEverything
 cls & title Portable Opera GX Launcher - Helper Edition - Download Suite
-call :HelperDownload "https://raw.githubusercontent.com/MarioMasta64/EverythingPortable/master/launch_everything.bat" "launch_everything.bat.1"
+call :HelperDownload "https://raw.githubusercontent.com/Marvideo2009/EverythingPortable/master/launch_everything.bat" "launch_everything.bat.1"
 cls & if exist launch_everything.bat.1 del launch_everything.bat >nul & rename launch_everything.bat.1 launch_everything.bat
 cls & start launch_everything.bat
 exit /b 2
@@ -174,7 +174,7 @@ echo set "AppData=%%folder%%\data\Users\MarioMasta64\AppData\Roaming">>!quick_la
 echo set "LocalAppData=%%folder%%\data\Users\MarioMasta64\AppData\Local">>!quick_launcher!
 echo set "ProgramData=%%folder%%\data\ProgramData">>!quick_launcher!
 echo cls>>!quick_launcher!
-echo .\bin\opera_gx\launcher.exe https://github.com/MarioMasta64/EverythingPortable/releases/latest/>>!quick_launcher!
+echo .\bin\opera_gx\launcher.exe https://github.com/Marvideo2009/EverythingPortable/releases/latest/>>!quick_launcher!
 echo taskkill /f /im opera_crashreporter.exe>>!quick_launcher!
 echo exit>>!quick_launcher!
 echo A QUICKLAUNCHER HAS BEEN WRITTEN TO:!quick_launcher!
@@ -320,6 +320,7 @@ cls
 if exist !license! exit /b 2
 echo ================================================== > !license!
 echo =              Script by MarioMasta64            = >> !license!
+echo =              Modified by Marvideo2009          = >> !license!
 set "extra_space="
 if %current_version% LSS 10 set "extra_space= "
 echo =           Script Version: v%current_version%- release        %extra_space%= >> !license!
@@ -351,7 +352,7 @@ if not exist launch_helpers.bat call :DownloadHelpers
 exit /b 2
 :DownloadHelpers
 if not exist .\helpers\download.vbs call :CreateDownloadVBS
-cscript .\helpers\download.vbs https://raw.githubusercontent.com/MarioMasta64/EverythingPortable/master/launch_helpers.bat launch_helpers.bat >nul
+cscript .\helpers\download.vbs https://raw.githubusercontent.com/Marvideo2009/EverythingPortable/master/launch_helpers.bat launch_helpers.bat >nul
 exit /b 2
 :CreateDownloadVBS
 echo Dim Arg, download, file > .\helpers\download.vbs
@@ -549,7 +550,7 @@ if "!NoPrompt!" NEQ "1" (
 
 :UpdateNow
 cls & title Portable Opera GX Launcher - Helper Edition - Updating Launcher
-call :HelperDownload "https://raw.githubusercontent.com/MarioMasta64/EverythingPortable/master/!main_launcher!" "!main_launcher!.1"
+call :HelperDownload "https://raw.githubusercontent.com/Marvideo2009/EverythingPortable/master/!main_launcher!" "!main_launcher!.1"
 cls & if exist "!main_launcher!.1" goto ReplacerCreate
 cls & call :ErrorOffline
 exit /b 2

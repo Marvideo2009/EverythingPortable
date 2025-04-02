@@ -30,7 +30,8 @@ if exist .\doc\kaerusetup_license.txt goto FILECHECK
 echo ================================================== > .\doc\kaerusetup_license.txt
 echo =              Script by MarioMasta64            = >> .\doc\kaerusetup_license.txt
 echo =         Most of the code by MikeModder007      = >> .\doc\kaerusetup_license.txt
-echo =            Script Version: v%current_version%- beta         = >> .\doc\kaerusetup_license.txt
+echo =             Modified by Marvideo2009           = >> .\doc\kaerusetup_license.txt
+echo =    Script Version: v%current_version%- beta    = >> .\doc\kaerusetup_license.txt
 echo ================================================== >> .\doc\kaerusetup_license.txt
 echo =You may Modify this WITH consent of the original= >> .\doc\kaerusetup_license.txt
 echo = creator, as long as you include a copy of this = >> .\doc\kaerusetup_license.txt

@@ -124,7 +124,7 @@ call :Version
 if exist version.txt del version.txt >nul
 cls
 title Portable Everything Launcher - Helper Edition - Checking For Update
-call :HelperDownload "https://raw.githubusercontent.com/MarioMasta64/EverythingPortable/master/version.txt" "version.txt"
+call :HelperDownload "https://raw.githubusercontent.com/Marvideo2009/EverythingPortable/master/version.txt" "version.txt"
 set Counter=0 & for /f "DELIMS=" %%i in ('type version.txt') do (set /a Counter+=1 & set "Line_!counter!=%%i")
 if exist version.txt del version.txt >nul
 set new_version=%Line_2%
@@ -157,7 +157,7 @@ exit /b 2
 :b
 :PortableEverything
 cls & title Portable Everything Launcher - Helper Edition - Download Suite
-call :HelperDownload "https://raw.githubusercontent.com/MarioMasta64/EverythingPortable/master/launch_everything.bat" "launch_everything.bat.1"
+call :HelperDownload "https://raw.githubusercontent.com/Marvideo2009/EverythingPortable/master/launch_everything.bat" "launch_everything.bat.1"
 cls & if exist launch_everything.bat.1 del launch_everything.bat >nul & rename launch_everything.bat.1 launch_everything.bat
 cls & start launch_everything.bat
 exit /b 2
@@ -165,7 +165,7 @@ exit /b 2
 :c
 :QuicklauncherCheck
 echo.>.\doc\everything_quicklaunch.txt
-call :HelperDownload "https://raw.githubusercontent.com/MarioMasta64/EverythingPortable/master/version.txt" "version.txt"
+call :HelperDownload "https://raw.githubusercontent.com/Marvideo2009/EverythingPortable/master/version.txt" "version.txt"
 set Counter=0 & for /f "DELIMS=" %%i in ('type version.txt') do (set /a Counter+=1 & set "Line_!counter!=%%i")
 set Max_Lines=!Counter!
 cls
@@ -227,7 +227,7 @@ call :DeleteAllTheStuff & exit /b 2
 if exist .\extra\notfirstrun.txt del .\extra\notfirstrun.txt >nul
 :m
 echo.>.\doc\everything_quicklaunch.txt
-call :HelperDownload "https://raw.githubusercontent.com/MarioMasta64/EverythingPortable/master/version.txt" "version.txt"
+call :HelperDownload "https://raw.githubusercontent.com/Marvideo2009/EverythingPortable/master/version.txt" "version.txt"
 set Counter=0 & for /f "DELIMS=" %%i in ('type version.txt') do (set /a Counter+=1 & set "Line_!counter!=%%i")
 set Max_Lines=!Counter!
 cls
@@ -255,7 +255,7 @@ if "!new_version!" NEQ "0" (
                 :: this returns OFFLINE sometimes and im unsure why, it only seems to happen after a certain amount of launchers that are updated to the current version
                 if "!new_version!" NEQ "OFFLINE" (
                     echo  - update detected - current: !current_version! - new: !new_version!
-                    call :HelperDownload "https://raw.githubusercontent.com/MarioMasta64/EverythingPortable/master/launch_!launcher!.bat" "launch_!launcher!.bat"
+                    call :HelperDownload "https://raw.githubusercontent.com/Marvideo2009/EverythingPortable/master/launch_!launcher!.bat" "launch_!launcher!.bat"
                     if exist launch_!launcher!.bat.1 (
                         if exist launch_!launcher!.bat del launch_!launcher!.bat >nul
                         rename launch_!launcher!.bat.1 launch_!launcher!.bat
@@ -326,7 +326,7 @@ set "launch_now=yes"
 if "!Debug!" NEQ "1" exit /b 2
 if exist .\testing\ rmdir /s /q .\testing\
 mkdir .\testing\
-call :HelperDownload "https://raw.githubusercontent.com/MarioMasta64/EverythingPortable/master/version.txt" "version.txt"
+call :HelperDownload "https://raw.githubusercontent.com/Marvideo2009/EverythingPortable/master/version.txt" "version.txt"
 set Counter=0 & for /f "DELIMS=" %%i in ('type version.txt') do (set /a Counter+=1 & set "Line_!counter!=%%i")
 set Max_Lines=!Counter!
 cls
@@ -335,7 +335,7 @@ set "launcher_counter=1"
 if !launcher_counter! GEQ !Max_Lines! goto :exit_loop_2
 REM set /a launcher_counter+=2
 set "launcher=!Line_%launcher_counter%!"
-if not exist "launch_!launcher!.bat" call :HelperDownload "https://raw.githubusercontent.com/MarioMasta64/EverythingPortable/master/launch_!launcher!.bat" "launch_!launcher!.bat"
+if not exist "launch_!launcher!.bat" call :HelperDownload "https://raw.githubusercontent.com/Marvideo2009/EverythingPortable/master/launch_!launcher!.bat" "launch_!launcher!.bat"
 if exist "launch_!launcher!.bat" mkdir ".\testing\!launcher!\" & copy "launch_!launcher!.bat" ".\testing\!launcher!\" >nul
 if "!launch_now!" EQU "yes" start "" ".\testing\!launcher!\launch_!launcher!.bat"
 set /a launcher_counter+=2
@@ -444,6 +444,7 @@ cls
 if exist !license! exit /b 2
 echo ================================================== > !license!
 echo =              Script by MarioMasta64            = >> !license!
+echo =              Modified by Marvideo2009          = >> !license!
 set "extra_space="
 if %current_version% LSS 10 set "extra_space= "
 echo =           Script Version: v%current_version%- release        %extra_space%= >> !license!
@@ -475,7 +476,7 @@ if not exist launch_helpers.bat call :DownloadHelpers
 exit /b 2
 :DownloadHelpers
 if not exist .\helpers\download.vbs call :CreateDownloadVBS
-cscript .\helpers\download.vbs https://raw.githubusercontent.com/MarioMasta64/EverythingPortable/master/launch_helpers.bat launch_helpers.bat >nul
+cscript .\helpers\download.vbs https://raw.githubusercontent.com/Marvideo2009/EverythingPortable/master/launch_helpers.bat launch_helpers.bat >nul
 exit /b 2
 :CreateDownloadVBS
 echo Dim Arg, download, file > .\helpers\download.vbs
@@ -673,7 +674,7 @@ if "!NoPrompt!" NEQ "1" (
 
 :UpdateNow
 cls & title Portable Everything Launcher - Helper Edition - Updating Launcher
-call :HelperDownload "https://raw.githubusercontent.com/MarioMasta64/EverythingPortable/master/!main_launcher!" "!main_launcher!.1"
+call :HelperDownload "https://raw.githubusercontent.com/Marvideo2009/EverythingPortable/master/!main_launcher!" "!main_launcher!.1"
 cls & if exist "!main_launcher!.1" goto ReplacerCreate
 cls & call :ErrorOffline
 exit /b 2
@@ -790,7 +791,7 @@ exit /b
 
 :GetInfo
 if exist "!launchername!.txt" del "!launchername!.txt" >nul
-call :HelperDownload "https://raw.githubusercontent.com/MarioMasta64/EverythingPortable/master/info/!launchername!.txt" "!launchername!.txt"
+call :HelperDownload "https://raw.githubusercontent.com/Marvideo2009/EverythingPortable/master/info/!launchername!.txt" "!launchername!.txt"
 cls
 for /f "DELIMS=" %%i in ('type !launchername!.txt') do (
     echo %%i
@@ -800,7 +801,7 @@ if exist "!launchername!.txt" del "!launchername!.txt" >nul
 exit /b
 
 :GetDownloads
-call :HelperDownload "https://raw.githubusercontent.com/MarioMasta64/EverythingPortable/master/version.txt" "version.txt"
+call :HelperDownload "https://raw.githubusercontent.com/Marvideo2009/EverythingPortable/master/version.txt" "version.txt"
 cls
 set "num=1"
 set "counter=0"
@@ -817,7 +818,7 @@ set nag="if it wasnt for http://stackoverflow.com/users/5269570/sam-denty this w
 exit /b
 
 :GetNewDownloads
-call :HelperDownload "https://raw.githubusercontent.com/MarioMasta64/EverythingPortable/master/version.txt" "version.txt"
+call :HelperDownload "https://raw.githubusercontent.com/Marvideo2009/EverythingPortable/master/version.txt" "version.txt"
 cls
 set "num=1"
 set "counter=0"
@@ -954,7 +955,7 @@ exit /b 2
 :UpdateChoiceNow
 cls
 if exist "!launcher!" del "!launcher!" >nul
-call :HelperDownload "https://raw.githubusercontent.com/MarioMasta64/EverythingPortable/master/!launcher!" "!launcher!"
+call :HelperDownload "https://raw.githubusercontent.com/Marvideo2009/EverythingPortable/master/!launcher!" "!launcher!"
 exit /b 2
 
 :Info
@@ -978,11 +979,11 @@ call :GetInfo
 cls
 title Portable "!launchername!" Launcher - More Info
 if exist "!launchername!.txt" del "!launchername!.txt" >nul
-call :HelperDownload "https://raw.githubusercontent.com/MarioMasta64/EverythingPortable/master/info/!launchername!.txt" "!launchername!.txt"
+call :HelperDownload "https://raw.githubusercontent.com/Marvideo2009/EverythingPortable/master/info/!launchername!.txt" "!launchername!.txt"
 cls
 if not exist "!launchername!.txt" (
     set "nag=No Info Found / Info Download Failed"
-    echo "Failed To Download https://raw.githubusercontent.com/MarioMasta64/EverythingPortable/master/info/"
+    echo "Failed To Download https://raw.githubusercontent.com/Marvideo2009/EverythingPortable/master/info/"
     goto Info
 )
 for /f "DELIMS=" %%i in (!launchername!.txt) do (echo %%i)
@@ -997,7 +998,7 @@ start "" "!main_launcher!"
 exit
 
 :GetAllTheStuff
-call :HelperDownload "https://github.com/MarioMasta64/EverythingPortable/archive/master.zip" "master.zip"
+call :HelperDownload "https://github.com/Marvideo2009/EverythingPortable/archive/master.zip" "master.zip"
 call :HelperExtract "!folder!\master.zip" "!folder!"
 echo "%folder%\master.zip" > .\helpers\file.txt
 for %%i in (.\EverythingPortable-master\launch_*.bat) do if not "%%i" == ".\EverythingPortable-master\%~n0" xcopy %%i .\ /e /i /y

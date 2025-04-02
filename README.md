@@ -38,7 +38,7 @@ however i still try to make it somewhat nice for those who find it and want to u
 
 # also issues are to be reported here:
 
-**https://github.com/MarioMasta64/EverythingPortable/issues/14**
+**https://github.com/Marvideo2009/EverythingPortable/issues/14**
 
 # updates:
 
